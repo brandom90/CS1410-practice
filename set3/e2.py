@@ -4,18 +4,15 @@ years = int(input("How many years have you been a member? ")) if customer_type =
 first_time = input("Is this your first visit? (yes/no): ").lower() if customer_type == "guest" else ""
 
 # Nested If/Else
-if customer_type == "member":
-    if years >= 5:
-        print("You get a 20% discount.")
-    else:
-        if years >= 2:
-            print("You get a 10% discount.")
-        else:
-            print("You get a 5% discount.")
-elif customer_type == "guest":
-    if first_time == "yes":
-        print("You get a 5% discount.")
-    else:
-        print("No discount for repeat guests.")
+if customer_type == "member" and years >= 5:
+    print("You get a 20% discount.")
+elif customer_type == "member" and 2 <= years < 5:
+    print("You get a 10% discount.")
+elif customer_type == "member" and years < 2:
+    print("You get a 5% discount.")
+elif customer_type == "guest" and first_time == "yes":
+    print("You get a 5% discount.")
+elif customer_type == "guest" and first_time == "no":
+    print("No discount for repeat guests.")
 else:
     print("Invalid customer type.")

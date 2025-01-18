@@ -14,3 +14,13 @@ if math_score >= 85:
         print("Placement: Intermediate.")
 else:
     print("Placement: Beginner.")
+
+
+if not math_score >= 85:
+    print("Placement: Beginner.")
+elif not science_score >= 80:
+    print("Placement: Intermediate.")
+elif not english_score >= 75:
+    print("Placement: Intermediate.")
+else:
+    print("Placement: Advanced.")
